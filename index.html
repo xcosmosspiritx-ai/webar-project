@@ -5,6 +5,8 @@
     <!-- A-Frame and MindAR Libraries -->
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <!-- Animation Mixer Extra Component for Animated .GLB Files -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.2.0/dist/aframe-extras.min.js"></script>
   </head>
   <body>
     <a-scene 
@@ -15,7 +17,6 @@
       device-orientation-permission-ui="enabled: false">
       
       <a-assets>
-        <!-- Preload models from the new 3dAssets folder -->
         <a-asset-item id="zeusModel" src="./3dAssets/Zeus.glb"></a-asset-item>
         <a-asset-item id="dominoModel" src="./3dAssets/Domino.glb"></a-asset-item>
         <a-asset-item id="astroModel" src="./3dAssets/model1.glb"></a-asset-item>
@@ -24,9 +25,10 @@
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-<!-- Target 0: Alice Roberts (DNA) -->
+
+      <!-- Target 0: Alice Roberts (DNA - Animated) -->
       <a-entity mindar-image-target="targetIndex: 0">
-        <a-gltf-model src="#dnaModel" position="0 0.1 0" scale="1.5 1.5 1.5" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model src="#dnaModel" position="0 0.1 0" scale="1.5 1.5 1.5" rotation="0 0 0" animation-mixer></a-gltf-model>
       </a-entity>
 
       <!-- Target 1: Weather (Earth) -->
@@ -34,9 +36,9 @@
         <a-gltf-model src="#earthModel" position="0 0.1 0" scale="1.5 1.5 1.5" rotation="0 0 0"></a-gltf-model>
       </a-entity>
 
-      <!-- Target 2: John Dee (Astrocalculator) -->
+      <!-- Target 2: John Dee (Astrocalculator - Animated) -->
       <a-entity mindar-image-target="targetIndex: 2">
-        <a-gltf-model src="#astroModel" position="0 0.1 0" scale="1.5 1.5 1.5" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model src="#astroModel" position="0 0.1 0" scale="1.5 1.5 1.5" rotation="0 0 0" animation-mixer></a-gltf-model>
       </a-entity>
 
       <!-- Target 3: Mythos (Zeus) -->
@@ -48,8 +50,7 @@
       <a-entity mindar-image-target="targetIndex: 4">
         <a-gltf-model src="#dominoModel" position="0 0.1 0" scale="1.5 1.5 1.5" rotation="0 0 0"></a-gltf-model>
       </a-entity>
-     
-      
+
     </a-scene>
   </body>
 </html>
