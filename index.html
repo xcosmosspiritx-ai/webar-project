@@ -15,12 +15,12 @@
       device-orientation-permission-ui="enabled: false">
       
       <a-assets>
-        <!-- Paths updated to match the "3d Assets" folder -->
-        <a-asset-item id="zeusModel" src="./3d Assets/Zeus.glb"></a-asset-item>
-        <a-asset-item id="dominoModel" src="./3d Assets/Domino.glb"></a-asset-item>
-        <a-asset-item id="astroModel" src="./3d Assets/model1.glb"></a-asset-item>
-        <a-asset-item id="earthModel" src="./3d Assets/Earth.glb"></a-asset-item>
-        <a-asset-item id="dnaModel" src="./3d Assets/DNA.glb"></a-asset-item>
+        <!-- Preload models from the new 3dAssets folder -->
+        <a-asset-item id="zeusModel" src="./3dAssets/Zeus.glb"></a-asset-item>
+        <a-asset-item id="dominoModel" src="./3dAssets/Domino.glb"></a-asset-item>
+        <a-asset-item id="astroModel" src="./3dAssets/model1.glb"></a-asset-item>
+        <a-asset-item id="earthModel" src="./3dAssets/Earth.glb"></a-asset-item>
+        <a-asset-item id="dnaModel" src="./3dAssets/DNA.glb"></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -50,40 +50,6 @@
         <a-gltf-model src="#dnaModel" position="0 0 0" scale="0.2 0.2 0.2" rotation="0 0 0"></a-gltf-model>
       </a-entity>
 
-    </a-scene>
-  </body>
-</html><!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- A-Frame & MindAR Libraries -->
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-  </head>
-  <body>
-    <!-- AR Scene Container -->
-    <a-scene 
-      mindar-image="imageTargetSrc: ./targets.mind;" 
-      color-space="sRGB" 
-      renderer="colorManagement: true, physicallyCorrectLights" 
-      vr-mode-ui="enabled: false" 
-      device-orientation-permission-ui="enabled: false">
-      
-      <a-assets>
-        <!-- Preload 3D Models and Images -->
-        <a-asset-item id="model1" src="./assets/model.glb"></a-asset-item>
-        <img id="label1" src="./assets/overlay.png">
-      </a-assets>
-
-      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-
-      <!-- Target 0 (First Book Cover) -->
-      <a-entity mindar-image-target="targetIndex: 0">
-        <!-- 3D Asset Overlay -->
-        <a-gltf-model src="#model1" position="0 0 0" scale="0.2 0.2 0.2" rotation="0 0 0"></a-gltf-model>
-        <!-- 2D UI Overlay -->
-        <a-image src="#label1" position="0 0.5 0" height="0.3" width="0.6"></a-image>
-      </a-entity>
     </a-scene>
   </body>
 </html>
